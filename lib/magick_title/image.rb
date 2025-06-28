@@ -93,12 +93,12 @@ module MagickTitle
       puts convert_command if options.log_command
       system convert_command
       
-      File.exists?(fullpath)
+      File.exist?(fullpath)
     end
     
     # Deletes the specified image
     def delete(file=fullpath)
-      FileUtils.rm(file) if file && File.exists?(file)
+      FileUtils.rm(file) if file && File.exist?(file)
     end
     
     
@@ -117,7 +117,7 @@ module MagickTitle
     def exists?(file=fullpath)
       return unless file
       file = [file, options.extension].join(".") unless file.match(/\.[a-z]{3,4}$/)
-      File.exists?(file)
+      File.exist?(file)
     end
     
     # Returns the full path to the file

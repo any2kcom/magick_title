@@ -24,9 +24,9 @@ class TestOptions < MagickTitle::TestCase
   
   should "use custom font path" do
     MagickTitle.options[:font_path] = File.expand_path("../dummy/fonts/custom/nested", __FILE__)
-    assert File.exists?(File.join(MagickTitle.options[:font_path], "Lobster.ttf"))
+    assert File.exist?(File.join(MagickTitle.options[:font_path], "Lobster.ttf"))
     @title = MagickTitle.say("Hello Magick Title with Custom font path!", :font => "Lobster.ttf")
-    assert File.exists?(@title.fullpath)
+    assert File.exist?(@title.fullpath)
   end
   
 end

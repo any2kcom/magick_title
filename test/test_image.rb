@@ -46,7 +46,7 @@ class TestImage < MagickTitle::TestCase
     should "allow update to valid title" do
       assert @title.update("Hello!")
       assert @title.save
-      assert File.exists?(@title.fullpath)
+      assert File.exist?(@title.fullpath)
     end
     
   end
@@ -61,13 +61,13 @@ class TestImage < MagickTitle::TestCase
     should "save and create an image" do
       assert @title.save
       assert @title.fullpath.match(/\.png$/)
-      assert File.exists?(@title.fullpath)
+      assert File.exist?(@title.fullpath)
     end
     
     should "delete it's image" do
       assert @title.save
       assert @title.delete
-      assert !File.exists?(@title.fullpath)
+      assert !File.exist?(@title.fullpath)
     end
     
   end
